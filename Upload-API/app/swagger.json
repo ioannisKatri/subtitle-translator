@@ -1,0 +1,133 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Upload API",
+    "description": "Upload API used translate .txt files to the requested language. If there is no available translation for the it will use the same line",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Local server"
+    }
+  ],
+  "paths": {
+    "/upload": {
+      "post": {
+        "summary": "",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "in": "file",
+            "name": "Uploaded Files",
+            "type": "file",
+            "required": true
+          },
+          {
+            "in": "email",
+            "name": "email",
+            "type": "string",
+            "description": "Add your email address",
+            "example": "yourEmail@yahoo.com",
+            "required": true
+          },
+          {
+            "in": "select",
+            "name": "Input Language",
+            "description": "File Input Language",
+            "schema": {
+              "type": "select",
+              "enum": [
+                "en",
+                "de"
+              ]
+            },
+            "required": true
+          },
+          {
+            "in": "select",
+            "name": "Output Language",
+            "description": "File Output Language",
+            "schema": {
+              "type": "select",
+              "enum": [
+                "de",
+                "en"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updates the user that he will receive an email",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "payload": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Translated files will be send via an email"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "An error code with a specific description.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Specific Error Message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "An error code with a specific description.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Specific Error Message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

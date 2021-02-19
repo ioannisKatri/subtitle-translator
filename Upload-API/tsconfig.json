@@ -1,0 +1,29 @@
+//tsconfig.json receives the configuration for the typescript compiler like allowing javascript files, the location of your files
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "target": "es6",
+    "module": "commonjs",
+    "sourceMap": true,
+    "rootDir": "./app",
+    "outDir": "./build",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "typeRoots": [
+      "./app/typings/",
+      "node_modules/@types/"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "app/tests/"
+  ],
+  "include": [
+    "app/**/*"
+  ]
+}

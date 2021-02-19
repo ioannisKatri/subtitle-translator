@@ -1,0 +1,11 @@
+//tslint.json is the configuration for TSLint, TSLint helps you to detect bad coding practices or follow a coding style, you can configure its options like disallow unused variables, no logging to the console, etc.
+{
+    "defaultSeverity": "error",
+    "extends": ["tslint:recommended"],
+    "jsRules": {},
+    "rules": {
+        "no-console": false,
+        "no-namespace": false
+    },
+    "rulesDirectory": []
+}

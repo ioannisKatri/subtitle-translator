@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+    <meta charset=utf-8>
+    <title>Upload File</title>
+</head>
+
+<body>
+<h3>Please upload your files</h3>
+
+<html>
+<head>
+    <title>File upload Node.</title>
+</head>
+<body>
+<form id="uploadForm"
+      enctype="multipart/form-data"
+      action="/upload"
+      method="post">
+    <div style="display: block">
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email">
+    </div>
+    <div style="display: block">
+        <label for="sourceLanguage">Selecting input translation</label>
+        <select name="sourceLanguage" id="sourceLanguage">
+            <option value="en">en</option>
+        </select>
+    </div>
+    <div style="display: block">
+        <label for="targetLanguage">Selecting output translation</label>
+        <select name="targetLanguage" id="targetLanguage">
+            <option value="de">de</option>
+        </select>
+    </div>
+    <div style="display: block">
+        <input type="file" name="for_translation" multiple/>
+    </div>
+    <input type="submit" value="Upload Files" name="submit">
+
+</form>
+</body>
+</html>
+</body>
+
+</html>
