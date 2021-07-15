@@ -36,7 +36,7 @@
     "axios": "^0.21.1",
     "datadog-winston": "^1.5.1",
     "express-winston": "^4.0.5",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "multer": "^1.4.2",
