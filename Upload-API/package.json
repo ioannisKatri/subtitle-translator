@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@sendgrid/mail": "^7.4.2",
-    "axios": "^0.21.1",
+    "axios": "^0.21.3",
     "datadog-winston": "^1.5.1",
     "express-winston": "^4.0.5",
     "dotenv": "^8.2.0",
